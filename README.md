@@ -2,7 +2,7 @@
 
 A clean, modern, and highly interactive undergraduate admission form designed from scratch. This project demonstrates foundational skills in combining structured semantic HTML, custom layout styling, and basic dynamic logic.
 
-Live Interactive Demo:https://mirai-builds.github.io/UG-Admission-Form/
+Live Interactive Demo:https://mirai-builds.github.io/UG-Admission-form/
 ## ✨ Key Features
 * **Semantic Form Architecture:** Utilizes industry-standard input types for data safety.
 * **Figma-Inspired UI Layout:** Styled with a clean modern aesthetic, custom responsive spacing, and smooth hover state transitions.
