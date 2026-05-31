@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admission Form For UG Programme</title>
+    <style>
+        /* 1. Global Page Styles */
+        body {
+            background-color: lightblue; 
+            color: black;               
+            font-style: italic;         
+            font-family: Arial, sans-serif;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        /* 2. Form Layout Styles */
+        form {
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h2 {
+            font-style: normal; 
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        /* Styled inputs and dropdown select elements */
+        input, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-style: italic; 
+            background-color: #fff;
+        }
+
+        /* Submit Button Styling */
+        input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            font-weight: bold;
+            font-style: normal;
+            cursor: pointer;
+            border: none;
+            margin-top: 10px;
+            transition: background 0.2s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        /* 3. Success Popup Message Box */
+        .success-message {
+            display: none; /* Hidden by default */
+            background-color: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+            font-style: normal;
+            font-weight: bold;
+            border: 1px solid #c3e6cb;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Success message element controlled via JavaScript -->
+    <div id="successBox" class="success-message">
+        🎉 Application Submitted Successfully!
+    </div>
+
+    <!-- The HTML Form -->
+    <form id="admissionForm">
+        <h2>UG Admission Form</h2>
+
+        <!-- Name Field -->
+        <div class="form-group">
+            <label for="form_name">Full Name:</label>
+            <!-- Adding 'required' stops blank submissions -->
+            <input type="text" id="form_name" name="form_name" placeholder="Enter your name" required>
+        </div>
+
+        <!-- Email Field -->
+        <div class="form-group">
+            <label for="form_email">Email Address:</label>
+            <input type="email" id="form_email" name="form_email" placeholder="name@example.com" required>
+        </div>
+
+        <!-- Phone Field -->
+        <div class="form-group">
+            <label for="form_phone">Phone Number:</label>
+            <input type="tel" id="form_phone" name="form_phone" placeholder="Enter phone number" required>
+        </div>
+
+        <!-- Date of Birth Field -->
+        <div class="form-group">
+            <label for="form_DOB">Date of Birth:</label>
+            <input type="date" id="form_DOB" name="form_DOB" required> 
+        </div>
+
+        <!-- Dropdown Selection Menu for Courses -->
+        <div class="form-group">
+            <label for="form_course">Select UG Course:</label>
+            <select id="form_course" name="form_course" required>
+                <option value="" disabled selected>-- Choose a course --</option>
+                <option value="btech_cse">B.Tech Computer Science (CSE)</option>
+                <option value="btech_ece">B.Tech Electronics (ECE)</option>
+                <option value="bca">BCA (Bachelor of Computer Applications)</option>
+                <option value="bsc_it">B.Sc Information Technology</option>
+            </select>
+        </div>
+
+        <!-- Submit Button -->
+        <input type="submit" value="Submit Application">
+    </form>
+
+    <!-- 4. JavaScript Code for Handling Form Submission Logic -->
+    <script>
+        const form = document.getElementById('admissionForm');
+        const successBox = document.getElementById('successBox');
+
+        form.addEventListener('submit', function(event) {
+            // Stops the browser from refreshing the page on submit
+            event.preventDefault(); 
+            
+            // Show the success banner
+            successBox.style.display = 'block';
+            
+            // Wipe the form fields clean for the next entry
+            form.reset();
+
+            // Automatically hide the alert banner after 4 seconds
+            setTimeout(() => {
+                successBox.style.display = 'none';
+            }, 4000);
+        });
+    </script>
+
+</body>
+</html> 
